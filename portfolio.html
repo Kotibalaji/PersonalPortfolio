@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Degachichu Koti Balaji | Java Developer</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --card:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.18);
+  --blue:#38bdf8;
+  --glow:#60a5fa;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+
+body{
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+a{text-decoration:none;color:var(--blue)}
+
+/* ====== STRONG GLOW EFFECT ====== */
+@keyframes strongBlink{
+  0%{box-shadow:0 0 5px var(--blue)}
+  50%{box-shadow:0 0 25px var(--glow),0 0 50px var(--blue)}
+  100%{box-shadow:0 0 5px var(--blue)}
+}
+
+@keyframes textGlow{
+  0%{text-shadow:0 0 5px var(--blue)}
+  50%{text-shadow:0 0 20px var(--glow),0 0 40px var(--blue)}
+  100%{text-shadow:0 0 5px var(--blue)}
+}
+
+/* ===== NAVBAR ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(2,6,23,.75);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  z-index:100;
+}
+
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav h2{
+  color:var(--blue);
+  animation:textGlow 2s infinite;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+}
+
+nav ul li a{
+  color:var(--text);
+  font-weight:600;
+}
+
+nav ul li a:hover{
+  color:var(--blue);
+  animation:textGlow 1s infinite;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:100px 20px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:40px;
+  backdrop-filter:blur(14px);
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:3rem;
+}
+
+.hero h1:hover,
+.hero h3:hover{
+  animation:textGlow 1s infinite;
+}
+
+.hero h3{
+  color:var(--blue);
+  margin:12px 0;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:620px;
+}
+
+.btns a{
+  display:inline-block;
+  margin:22px 15px 0 0;
+  padding:14px 30px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:var(--card);
+  transition:.3s;
+}
+
+.btns a:hover{
+  animation:strongBlink 1s infinite;
+}
+
+/* SOCIAL ICONS */
+.socials{
+  margin-top:25px;
+}
+
+.socials a{
+  font-size:1.5rem;
+  margin-right:18px;
+  display:inline-block;
+}
+
+.socials a:hover{
+  animation:textGlow 1s infinite;
+}
+
+/* ===== ABOUT ===== */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.about-grid img{
+  width:220px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  animation:strongBlink 3s infinite;
+}
+
+/* ===== HEADINGS ===== */
+h2:hover,
+h3:hover{
+  animation:textGlow 1s infinite;
+}
+
+/* ===== SKILLS ===== */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:18px;
+}
+
+.skill{
+  padding:16px;
+  text-align:center;
+  border-radius:14px;
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+.skill:hover{
+  animation:strongBlink 1s infinite;
+  color:var(--blue);
+}
+
+/* ===== PROJECTS ===== */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.project{
+  padding:25px;
+  border-radius:18px;
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+.project:hover{
+  animation:strongBlink 1s infinite;
+}
+
+.project h3:hover{
+  animation:textGlow 1s infinite;
+}
+
+/* ===== EDUCATION ===== */
+.edu{
+  padding:15px;
+  margin-bottom:14px;
+  border-radius:12px;
+}
+
+.edu:hover{
+  animation:strongBlink 1s infinite;
+}
+
+/* ===== CONTACT ===== */
+form{
+  display:grid;
+  gap:15px;
+}
+
+input,textarea{
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#020617;
+  color:white;
+}
+
+input:hover,
+textarea:hover{
+  animation:strongBlink 1s infinite;
+}
+
+button{
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--blue);
+  cursor:pointer;
+}
+
+button:hover{
+  animation:strongBlink 1s infinite;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:40px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+footer a:hover{
+  animation:textGlow 1s infinite;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.4rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <h2>Balaji</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>Degachichu Koti Balaji</h1>
+    <h3>Java Developer</h3>
+    <p>Java backend developer with strong OOP, JDBC, MySQL and clean coding practices. Passionate about scalable applications and real-world problem solving.</p>
+
+    <div class="btns">
+      <a href="c:\Users\degac\Downloads\Koti_Balaji_Resume_ZoomVersion.pdf" download>Download CV</a>
+      <a href="https://www.linkedin.com/in/degachichu-koti-balaji-49951724a/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Kotibalaji" target="_blank">GitHub</a>
+    </div>
+
+    <div class="socials">
+      <a href="tel:+919391207320">📞</a>
+      <a href="mailto:degachichubalaji@gmail.com">✉️</a>
+      <a href="https://www.linkedin.com/in/degachichu-koti-balaji-49951724a/">in</a>
+      <a href="https://github.com/Kotibalaji">🐙</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="card about-grid">
+    <img src="c:\Users\degac\OneDrive\Desktop\meportfoliophoto.png" alt="Balaji">
+    <div>
+      <h2>About Me</h2>
+      <p>ECE graduate with strong Java fundamentals, DSA, SQL and hands-on backend experience. Trained at KodNest with industry-oriented practices.</p>
+      <h3 style="margin-top:25px;">Skills</h3>
+      <div class="skills">
+        <div class="skill">Java</div>
+        <div class="skill">SQL</div>
+        <div class="skill">JDBC</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">OOP</div>
+        <div class="skill">DSA</div>
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">GitHub</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="card">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Employee Management System</h3>
+        <ul>
+          <li>Java Swing + JDBC + MySQL CRUD</li>
+          <li>PreparedStatement security</li>
+          <li>Modular UI design</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Electricity Generation from Plants</h3>
+        <ul>
+          <li>4.5V power generation</li>
+          <li>IEEE conference project</li>
+          <li>Research & teamwork</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="card">
+    <h2>Education</h2>
+    <div class="edu">B.Tech (ECE) – SVCE Tirupati | CGPA: 8.22</div>
+    <div class="edu">Intermediate (MPC) – Sri Chaitanya | 95.7%</div>
+    <div class="edu">10th Standard – Sri Chaitanya | CGPA: 9.8</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Get In Touch</h2>
+    <form action="mailto:degachichubalaji@gmail.com" method="post" enctype="text/plain">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <a href="#home">Home</a> • <a href="#about">About</a> • <a href="#projects">Projects</a> • <a href="#education">Education</a><br><br>
+  <a href="https://linkedin.com">LinkedIn</a> • <a href="https://github.com/Kotibalaji">GitHub</a> • <a href="https://leetcode.com">LeetCode</a>
+</footer>
+
+</body>
+</html>
